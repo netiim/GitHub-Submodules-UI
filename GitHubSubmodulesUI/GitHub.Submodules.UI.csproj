@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GitHub-Submodules-Core\GitHub.Submodules.Domain\GitHub.Submodules.Domain.csproj" />
+    <ProjectReference Include="..\GitHub-Submodules-Core\GitHub.Submodules.Services\GitHub.Submodules.Services.csproj" />
+  </ItemGroup>
+
 </Project>
