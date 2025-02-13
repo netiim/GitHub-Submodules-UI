@@ -50,7 +50,7 @@ Ao clonar um repositório que usa submódulos, é necessário inicializá-los co
 1. Clone o repositório principal:
 
 ```sh
-git clone https://github.com/seu-usuario/MeuProjeto.git
+git clone https://github.com/netiim/GitHub-Submodules-UI.git
 ```
 2. Inicialize os submódulos:
 
@@ -65,7 +65,7 @@ git submodule update --recursive
 Método 2: Clonando Tudo de Uma Vez
 Para evitar os passos acima, use este comando para clonar o repositório e baixar os submódulos automaticamente:
 ```sh
-git clone --recurse-submodules https://github.com/seu-usuario/MeuProjeto.git
+git clone --recurse-submodules https://github.com/netiim/GitHub-Submodules-UI.git
 ```
 
 ## 🎯 Usando Submódulos no Visual Studio 2022
@@ -88,9 +88,12 @@ Se os projetos do submódulo não aparecerem corretamente:
 2. **Copie as referências dos projetos do submódulo** e adicione no `.csproj`, garantindo que estejam corretamente referenciados.
 3. **Salve o arquivo e reabra a solução no Visual Studio**.
 
-🔹 **Exemplo de referência a um submódulo dentro do `.csproj`**:
+🔹 **Exemplo de referência a um submódulo dentro do `.sln` da solução principal**:
 ```xml
-<ItemGroup>
-    <ProjectReference Include="..\GitHub-Submodules-Core\ProjetoSubmodulo.csproj" />
-</ItemGroup>
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHub.Submodules.UI", "GitHubSubmodulesUI\GitHub.Submodules.UI.csproj", "{DCBA9456-6F22-4698-91FB-C82FA00188D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHub.Submodules.Domain", "GitHub-Submodules-Core\GitHub.Submodules.Domain\GitHub.Submodules.Domain.csproj", "{AEA07221-6A80-468C-9AAB-CEF149DCFA06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHub.Submodules.Services", "GitHub-Submodules-Core\GitHub.Submodules.Services\GitHub.Submodules.Services.csproj", "{8E4C04AE-0A65-4C1C-BA26-8D4CAF41C0AD}"
+EndProject
 ```
